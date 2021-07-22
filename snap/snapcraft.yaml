@@ -27,8 +27,6 @@ parts:
       mv ../../scripts-files/src/scripts .
       scripts/bashScripts/nativeExecutableMaker.sh  # Downloading dart-sdk for the correct architecture.
 
-      rm -r cbj_hub
-
       snapcraftctl build
 
     build-packages:

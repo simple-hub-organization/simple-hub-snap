@@ -7,10 +7,8 @@ scripts/bashScripts/dartSdkDownload.sh # Downloading dart-sdk for the correct ar
 unzip dartsdk-*.zip
 rm dartsdk-*.zip
 
-cd cbj_hub
-../dart-sdk/bin/pub get --no-precompile
-../dart-sdk/bin/dart run build_runner build --delete-conflicting-outputs
-cd ..
+dart-sdk/bin/pub get --no-precompile
+dart-sdk/bin/dart run build_runner build --delete-conflicting-outputs
 
 #chmod -R +rx dart-sdk/
 dart-sdk/bin/dart2native cbj_hub/bin/cbj_hub.dart -o CyBear-Jinni_Hub
