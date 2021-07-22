@@ -14,10 +14,17 @@ grade: devel # must be 'stable' to release into candidate/stable channels
 confinement: devmode # use 'strict' once you have the right plugs and slots
 
 parts:
-  cbj-hub:
+  scripts-files:
     plugin: dump
-    source: https://github.com/CyBear-Jinni/CBJ_Hub.git
+    source: .
+
+  cbj-hub:
+    after:
+      - scripts-files
+    plugin: dump
+    source: https://github.com/CyBear-Jinni/cbj_hub.git
     override-build: |
+      mv ../../scripts-files/src/scripts .
       scripts/bashScripts/nativeExecutableMaker.sh  # Downloading dart-sdk for the correct architecture.
 
       rm -r cbj_hub
