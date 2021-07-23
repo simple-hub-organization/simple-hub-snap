@@ -13,6 +13,19 @@ description: |
 grade: devel # must be 'stable' to release into candidate/stable channels
 confinement: devmode # use 'strict' once you have the right plugs and slots
 
+architectures:
+  - build-on: armhf
+    run-on: armhf
+
+  - build-on: arm64
+    run-on: arm64
+
+  - build-on: amd64
+    run-on: amd64
+
+  - build-on: i386
+    run-on: i386
+
 parts:
   scripts-files:
     plugin: dump
