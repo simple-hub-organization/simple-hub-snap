@@ -17,6 +17,8 @@ parts:
   scripts-files:
     plugin: dump
     source: .
+    override-build: |
+      rm README.md
 
   cbj-hub:
     after:
@@ -24,7 +26,6 @@ parts:
     plugin: dump
     source: https://github.com/CyBear-Jinni/cbj_hub.git
     override-build: |
-      rm ../../scripts-files/src/README.md
       mv ../../scripts-files/src/scripts .
       scripts/bashScripts/nativeExecutableMaker.sh  # Downloading dart-sdk for the correct architecture.
 
