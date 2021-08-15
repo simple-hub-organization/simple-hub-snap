@@ -10,8 +10,9 @@ description: |
   The functionality will include activating routines, saving different scense, binding devices so
   that action in one device will triger other actions in different devices and more.
 
-grade: devel # must be 'stable' to release into candidate/stable channels
-confinement: devmode # use 'strict' once you have the right plugs and slots
+grade: stable  # devel/stable, must be 'stable' to release into candidate/stable channels
+confinement: strict  # devmode/classic/strict, use 'strict' once you have the right plugs and slots
+
 
 architectures:
   - build-on: armhf
@@ -50,8 +51,17 @@ parts:
       - libatlas-base-dev
       - libevent-dev
 
+
+plugs:
+  read-etc:
+    interface: system-files
+    read:
+      - /etc
+
+
 apps:
   cbj-hub:
     command: CyBear-Jinni_Hub $SNAP
     daemon: simple
-    plugs: [network, network-bind, hardware-observe]
+    plugs: [network, network-bind, hardware-observe, system-observe, avahi-control, avahi-observe, read-etc]
+
