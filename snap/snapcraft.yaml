@@ -53,15 +53,16 @@ parts:
 
 
 plugs:
-  read-etc:
+  read-armbian-device-info:
     interface: system-files
     read:
-      - /etc
+      - /etc/armbian-release
+      - /etc/armbian-image-release
 
 
 apps:
   cbj-hub:
     command: CyBear-Jinni_Hub $SNAP
     daemon: simple
-    plugs: [network, network-bind, hardware-observe, system-observe, avahi-control, avahi-observe, read-etc]
+    plugs: [network, network-bind, hardware-observe, system-observe, avahi-observe, avahi-control, read-armbian-device-info]
 
