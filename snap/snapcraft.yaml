@@ -51,13 +51,9 @@ parts:
       - libatlas-base-dev
       - libevent-dev
 
-
-
-
-
 apps:
   cbj-hub:
     command: CyBear-Jinni_Hub $SNAP
     daemon: simple
-    plugs: [network, network-bind, hardware-observe, system-observe, avahi-observe, avahi-control]
+    plugs: [network, network-bind, hardware-observe, system-observe, avahi-control]
 
