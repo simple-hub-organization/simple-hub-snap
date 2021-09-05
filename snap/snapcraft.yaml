@@ -13,11 +13,13 @@ description: |
   The functionality will include activating routines, saving different scense, binding devices so
   that action in one device will trigger other actions in different devices and more.
 
-  You can control the Hub from your android phone https://play.google.com/store/apps/details?id=com.cybear_jinni.smart_home
+  You can control the Hub from your android phone
+
+  https://play.google.com/store/apps/details?id=com.cybear_jinni.smart_home
 
   For the hub to work please install MQTT broker https://snapcraft.io/mosquitto and configure it to be open for requests.
 
-  If you have any questions you can ask in the CyBear Jinni discorde server https://discord.gg/mUXfwUY .
+  If you have any questions you can ask in the CyBear Jinni discord server https://discord.gg/mUXfwUY.
 
 grade: stable  # devel/stable, must be 'stable' to release into candidate/stable channels
 confinement: strict  # devmode/classic/strict, use 'strict' once you have the right plugs and slots
