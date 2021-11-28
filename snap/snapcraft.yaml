@@ -1,6 +1,6 @@
 name: cbj-hub
 base: core20
-version: '0.6'
+version: '1.0'
 summary: Hub to control smart device from different vendors with one app.
 description: |
   CyBear Jinni Hub to control smart devices from different vendors with one easy-to-use app.
@@ -43,13 +43,16 @@ parts:
       rm README.md
 
   cbj-hub:
+    source: https://github.com/CyBear-Jinni/cbj_hub.git
     after:
       - scripts-files
     plugin: dump
-    source: https://github.com/CyBear-Jinni/cbj_hub.git
     override-build: |
       mv ../../scripts-files/src/scripts .
       scripts/bashScripts/nativeExecutableMaker.sh  # Downloading dart-sdk for the correct architecture.
+
+#      We need to delete all the code from the dir after making the executable file
+#      rm -r All code from cbj_hub
 
       snapcraftctl build
 
