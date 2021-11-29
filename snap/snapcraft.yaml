@@ -51,8 +51,8 @@ parts:
       mv ../../scripts-files/src/scripts .
       scripts/bashScripts/nativeExecutableMaker.sh  # Downloading dart-sdk for the correct architecture.
 
-#      We need to delete all the code from the dir after making the executable file
-#      rm -r All code from cbj_hub
+      # We need to delete all the code from the dir after making the executable file
+      # rm -r All code from cbj_hub
 
       snapcraftctl build
 
