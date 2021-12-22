@@ -1,6 +1,6 @@
 name: cbj-hub
 base: core20
-version: '1.0'
+version: '1.2'
 summary: Hub to control smart device from different vendors with one app.
 description: |
   CyBear Jinni Hub to control smart devices from different vendors with one easy-to-use app.
