@@ -1,6 +1,6 @@
 name: cbj-hub
 base: core20
-version: '1.2.2'
+version: '1.3.0'
 summary: Hub to control smart device from different vendors with one app.
 description: |
   CyBear Jinni Hub to control smart devices from different vendors with one easy-to-use app.
@@ -70,4 +70,5 @@ apps:
     command: CyBear-Jinni_Hub $SNAP
     daemon: simple
     plugs: [network, network-bind, hardware-observe, system-observe, avahi-control]
+    # plugs: [network, network-bind, hardware-observe, system-observe, avahi-control, firewall-control, network-control, network-observe, process-control, system-trace, bluetooth-control, netlink-audit, netlink-connector, qualcomm-ipc-router]
 
