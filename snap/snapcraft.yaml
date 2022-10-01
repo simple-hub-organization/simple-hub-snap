@@ -64,6 +64,8 @@ parts:
     stage-packages:
       - libatlas-base-dev
       - libevent-dev
+      # For the ping command to work, become redundant if network-observe plug is introduced in the future
+      - iputils-ping
 
 apps:
   cbj-hub:
