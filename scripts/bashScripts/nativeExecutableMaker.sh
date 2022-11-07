@@ -7,7 +7,7 @@ scripts/bashScripts/dartSdkDownload.sh # Downloading dart-sdk for the correct ar
 unzip dartsdk-*.zip
 rm dartsdk-*.zip
 
-dart-sdk/bin/pub get --no-precompile
+dart-sdk/bin/dart pub get --no-precompile
 dart-sdk/bin/dart run build_runner build --delete-conflicting-outputs
 
 #chmod -R +rx dart-sdk/

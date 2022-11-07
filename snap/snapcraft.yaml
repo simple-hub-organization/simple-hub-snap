@@ -51,7 +51,8 @@ parts:
       mv ../../scripts-files/src/scripts .
       scripts/bashScripts/nativeExecutableMaker.sh  # Downloading dart-sdk for the correct architecture.
 
-      # We need to delete all the code from the dir after making the executable file
+      # We need to delete all the code from the dir after making the executable file, 
+      # currently all python file exist inside the project and referanced by directory so we can't
       # rm -r All code from cbj_hub
 
       snapcraftctl build
@@ -66,6 +67,7 @@ parts:
       - libevent-dev
       # For the ping command to work, become redundant if network-observe plug is introduced in the future
       - iputils-ping
+      - python3
 
 apps:
   cbj-hub:
