@@ -68,11 +68,13 @@ parts:
       # For the ping command to work, become redundant if network-observe plug is introduced in the future
       - iputils-ping
       - python3
+      - libnss-mdns
+      - avahi-utils
 
 apps:
   cbj-hub:
     command: CyBear-Jinni_Hub $SNAP
     daemon: simple
-    plugs: [network, network-bind, hardware-observe, system-observe, avahi-control]
+    plugs: [network, network-bind, hardware-observe, system-observe, avahi-control, avahi-observe]
     # plugs: [network, network-bind, hardware-observe, system-observe, avahi-control, firewall-control, network-control, network-observe, process-control, system-trace, bluetooth-control, netlink-audit, netlink-connector, qualcomm-ipc-router]
 
