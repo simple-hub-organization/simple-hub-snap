@@ -1,6 +1,6 @@
 name: cbj-hub
 base: core20
-version: '1.4.1'
+version: '1.4.2'
 summary: Hub to control smart device from different vendors with one app.
 description: |
   CyBear Jinni Hub to control smart devices from different vendors with one easy-to-use app.
@@ -68,6 +68,10 @@ parts:
       # For the ping command to work, become redundant if network-observe plug is introduced in the future
       - iputils-ping
       - python3
+      - python3-dev
+      - libffi-dev
+      - rustc
+      - cargo
       - libnss-mdns
       - avahi-utils
 
