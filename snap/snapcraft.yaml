@@ -70,7 +70,8 @@ parts:
       - python3
       - python3-dev
       - libffi-dev
-      - build-essential
+      - python3-cffi-backend
+      - build-essential 
       - libssl-dev
       - rustc
       - cargo
