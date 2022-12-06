@@ -78,6 +78,7 @@ parts:
       - libnss-mdns
       - avahi-utils
       - libpython3.9-dev
+      - gcc
 
 apps:
   cbj-hub:
