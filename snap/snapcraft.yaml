@@ -70,6 +70,7 @@ parts:
       - python3
       - python3-dev
       - libffi-dev
+      - python3-cffi-backend
       - rustc
       - cargo
       - libnss-mdns
