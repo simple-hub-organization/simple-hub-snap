@@ -73,8 +73,6 @@ parts:
       - python3.11-dev
       - python3
       - python3-dev
-      - python
-      - python-dev
       - libffi-dev
       - python3-cffi
       - python3-cffi-backend
