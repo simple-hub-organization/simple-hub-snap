@@ -80,7 +80,6 @@ parts:
       - libnss-mdns
       - avahi-utils
       - libpython3.9-dev
-      - libpython3.10-dev
       - libpython3-all-dev
       - gcc
       - g++
