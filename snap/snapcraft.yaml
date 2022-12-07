@@ -21,8 +21,8 @@ description: |
 
   If you have any questions you can ask in the CyBear Jinni discord server https://discord.gg/mUXfwUY.
 
-grade: stable  # devel/stable, must be 'stable' to release into candidate/stable channels
-confinement: strict  # devmode/classic/strict, use 'strict' once you have the right plugs and slots
+grade: devel  # devel/stable, must be 'stable' to release into candidate/stable channels
+confinement: devmode  # devmode/classic/strict, use 'strict' once you have the right plugs and slots
 
 
 #architectures:
