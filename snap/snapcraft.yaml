@@ -1,5 +1,5 @@
 name: cbj-hub
-base: core22
+base: core20
 version: '1.4.3'
 summary: Hub to control smart device from different vendors with one app.
 description: |
