@@ -44,7 +44,7 @@ parts:
 
   cbj-hub:
     # source: https://github.com/CyBear-Jinni/cbj_hub.git
-    source: https://github.com/guyluz11/cbj_hub
+    source: https://github.com/guyluz11/cbj_hub.git
     source-branch: test
     after:
       - scripts-files
