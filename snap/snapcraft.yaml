@@ -29,11 +29,11 @@ architectures:
   - build-on: armhf
     run-on: armhf
 
-  - build-on: arm64
-    run-on: arm64
-
-  - build-on: amd64
-    run-on: amd64
+#  - build-on: arm64
+#    run-on: arm64
+#
+#  - build-on: amd64
+#    run-on: amd64
 
 parts:
   scripts-files:
@@ -44,6 +44,7 @@ parts:
 
   cbj-hub:
     source: https://github.com/CyBear-Jinni/cbj_hub.git
+    source-branch: test
     after:
       - scripts-files
     plugin: dump
@@ -79,7 +80,11 @@ parts:
       - avahi-utils
       - libpython3.9-dev
       - gcc
-
+      - g++
+      - postgresql-client
+      - postgresql-dev
+      - musl-dev
+      - openssl-dev
 apps:
   cbj-hub:
     command: CyBear-Jinni_Hub $SNAP
