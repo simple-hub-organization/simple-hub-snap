@@ -84,7 +84,7 @@ parts:
       - postgresql-client
       - postgresql-dev
       - musl-dev
-      - openssl-dev
+
 apps:
   cbj-hub:
     command: CyBear-Jinni_Hub $SNAP
