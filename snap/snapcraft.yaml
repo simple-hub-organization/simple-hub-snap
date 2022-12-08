@@ -69,8 +69,8 @@ parts:
       - libevent-dev
       # For the ping command to work, become redundant if network-observe plug is introduced in the future
       - iputils-ping
-      - python3.11
-      - python3.11-dev
+      - python3.9
+      - python3.9-dev
       - libffi-dev
       - python3-cffi
       - python3-cffi-backend
@@ -80,8 +80,9 @@ parts:
       - cargo
       - libnss-mdns
       - avahi-utils
-      - libpython3.10
-      - libpython3.10-dev
+      # libpython3.10 require core22
+      - libpython3.9
+      - libpython3.9-dev
       - libpython3-all-dev
       - gcc
       - g++
