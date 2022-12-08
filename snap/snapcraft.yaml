@@ -1,5 +1,5 @@
 name: cbj-hub
-base: core22
+base: core20
 version: '1.4.3'
 summary: Hub to control smart device from different vendors with one app.
 description: |
@@ -21,13 +21,13 @@ description: |
 
   If you have any questions you can ask in the CyBear Jinni discord server https://discord.gg/mUXfwUY.
 
-grade: devel  # devel/stable, must be 'stable' to release into candidate/stable channels
-confinement: devmode  # devmode/classic/strict, use 'strict' once you have the right plugs and slots
+grade: stable  # devel/stable, must be 'stable' to release into candidate/stable channels
+confinement: strict  # devmode/classic/strict, use 'strict' once you have the right plugs and slots
 
 
-#architectures:
-#  - build-on: armhf
-#    run-on: armhf
+architectures:
+  - build-on: armhf
+    run-on: armhf
 
 #  - build-on: arm64
 #    run-on: arm64
@@ -80,8 +80,8 @@ parts:
       - cargo
       - libnss-mdns
       - avahi-utils
-      - libpython3.11
-      - libpython3.11-dev
+      - libpython3.10
+      - libpython3.10-dev
       - libpython3-all-dev
       - gcc
       - g++
