@@ -29,11 +29,11 @@ architectures:
   - build-on: armhf
     run-on: armhf
 
-#  - build-on: arm64
-#    run-on: arm64
-#
-#  - build-on: amd64
-#    run-on: amd64
+  - build-on: arm64
+    run-on: arm64
+
+  - build-on: amd64
+    run-on: amd64
 
 parts:
   scripts-files:
@@ -43,9 +43,7 @@ parts:
       rm README.md
 
   cbj-hub:
-    # source: https://github.com/CyBear-Jinni/cbj_hub.git
-    source: https://github.com/guyluz11/cbj_hub.git
-    source-branch: test
+    source: https://github.com/CyBear-Jinni/cbj_hub.git
     after:
       - scripts-files
     plugin: dump
@@ -69,24 +67,7 @@ parts:
       - libevent-dev
       # For the ping command to work, become redundant if network-observe plug is introduced in the future
       - iputils-ping
-      - python3.11
-      - python3.11-dev
-      - libffi-dev
-      - python3-cffi
-      - python3-cffi-backend
-      - build-essential
-      - libssl-dev
-      - rustc
-      - cargo
-      - libnss-mdns
-      - avahi-utils
-      - libpython3.10
-      - libpython3.10-dev
-      - libpython3-all-dev
-      - gcc
-      - g++
-      - postgresql-client
-      - musl-dev
+      - python3
 
 apps:
   cbj-hub:
