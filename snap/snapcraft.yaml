@@ -37,7 +37,9 @@ parts:
     source: .
     plugin: nil
     stage-snaps:
+    # https://github.com/dceejay/nodered.snap/tree/master/snap
       - node-red
+    # https://github.com/eclipse-mosquitto/mosquitto/blob/master/snap/snapcraft.yaml
       - mosquitto
     stage-packages:
       - python3
