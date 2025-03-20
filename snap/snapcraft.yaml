@@ -24,17 +24,21 @@ description: |
 grade: stable  # devel/stable, must be 'stable' to release into candidate/stable channels
 confinement: strict  # devmode/classic/strict, use 'strict' once you have the right plugs and slots
 
+platforms:
+  armhf:
+    build-on: armhf
+  arm64:
+    build-on: arm64
+  amd64:
+    build-on: amd64
 
 parts:
-
   include-snaps:
     source: .
     plugin: nil
     stage-snaps:
       - node-red
       - mosquitto
-    build-packages:
-      - linux32
     stage-packages:
       - python3
       - libatomic1
