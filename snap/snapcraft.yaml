@@ -33,6 +33,8 @@ parts:
     stage-snaps:
       - node-red
       - mosquitto
+    build-packages:
+      - linux32
     stage-packages:
       - python3
       - libatomic1
