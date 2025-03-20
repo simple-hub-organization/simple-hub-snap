@@ -2,16 +2,34 @@
 
 echo "Making native executable of the project"
 
+PROJECT_PATH="$1"
+MAIN_FILE="$2"
+EXECUTABLE_NAME="$3"
+CURRENT_PATH="$HOME/project/"
+
+if [[ -z "$PROJECT_PATH" || -z "$MAIN_FILE" || -z "$EXECUTABLE_NAME" ]]; then
+    echo "Error: Missing arguments!"
+    echo "Usage: ./nativeExecutableMaker.sh <PROJECT_PATH> <ANOTHER_VAR>"
+    exit 1
+fi
+
+rm -f dartsdk-*.zip
+
 scripts/bashScripts/dartSdkDownload.sh # Downloading dart-sdk for the correct architecture.
 
-unzip dartsdk-*.zip
+unzip -o dartsdk-*.zip
 rm dartsdk-*.zip
 
-dart-sdk/bin/dart pub get --no-precompile
-dart-sdk/bin/dart run build_runner build --delete-conflicting-outputs
+rm -f "$PROJECT_PATH/pubspec.lock"
 
-#chmod -R +rx dart-sdk/
-dart-sdk/bin/dart compile exe bin/cbj_hub.dart -o CyBear-Jinni_Hub
-# sudo dart-sdk/bin/dart bin/cbj_hub.dart .
+dart-sdk/bin/dart pub get --no-precompile --directory="$PROJECT_PATH"
+dart-sdk/bin/dart run build_runner clean --directory="$PROJECT_PATH"
+
+cd "$PROJECT_PATH"
+# Found a bug where "--directory" does not work with "dart run build_runner"
+#dart-sdk/bin/dart run build_runner build --delete-conflicting-outputs --directory="$PROJECT_PATH"
+$CURRENT_PATH/dart-sdk/bin/dart run build_runner build --delete-conflicting-outputs
+cd "$CURRENT_PATH"
+dart-sdk/bin/dart compile exe "$PROJECT_PATH/$MAIN_FILE" -o "$EXECUTABLE_NAME"
 
 rm -r dart-sdk/
