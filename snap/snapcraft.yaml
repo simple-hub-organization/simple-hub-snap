@@ -59,11 +59,12 @@ parts:
       - hub
     override-build: |
       echo "Security Bear build"
-      PROJECT_PATH="$SNAPCRAFT_PART_BUILD/apps/security_bear"
-      MAIN_FILE="bin/main.dart"
-      EXECUTABLE_NAME="Security-Bear"
+      PROJECT_PATH=~/parts/hub/build/apps/security_bear
+      
+      MAIN_FILE=bin/main.dart
+      EXECUTABLE_NAME=Security-Bear
 
-      cd $PROJECT_PATH
+      cd ~/project
       scripts/bashScripts/nativeExecutableMaker.sh "$PROJECT_PATH" "$MAIN_FILE" "$EXECUTABLE_NAME"
       mv "$EXECUTABLE_NAME" "$SNAPCRAFT_PART_INSTALL/"
       snapcraftctl build
@@ -117,10 +118,10 @@ parts:
     source: .
     override-build: |
       set -x
-      PROJECT_PATH="$SNAPCRAFT_PART_BUILD/apps/hub_javascript"
-      MAIN_FILE="src/app.ts"
-      EXECUTABLE_NAME="hub-js"
-      cd $SNAPCRAFT_PART_INSTALL
+      PROJECT_PATH=~/parts/hub/build/apps/hub_javascript
+      MAIN_FILE=src/app.ts
+      EXECUTABLE_NAME=hub-js
+      cd "$SNAPCRAFT_PART_INSTALL"
 
       cp -r "$PROJECT_PATH" .
 
@@ -144,7 +145,6 @@ parts:
     source: https://github.com/simple-hub-organization/simple-hub.git
     plugin: dump
     override-build: |
-
       rm -rf "$SNAPCRAFT_PART_BUILD/tools/CBJ_App_Snap"
       rm -rf "$SNAPCRAFT_PART_BUILD/tools/CBJ_Smart-Device-Snap"
       rm -rf "$SNAPCRAFT_PART_BUILD/tools/cbj-kubernetes-files"
@@ -158,13 +158,15 @@ parts:
       rm -rf "$SNAPCRAFT_PART_BUILD/package-lock.json"
       rm -rf "$SNAPCRAFT_PART_BUILD/README.md"
 
-      PROJECT_PATH="$SNAPCRAFT_PART_BUILD/apps/hub"
-      MAIN_FILE="bin/cbj_hub.dart"
-      EXECUTABLE_NAME="CyBear-Jinni_Hub"
-      cd "$PROJECT_PATH"
-      scripts/bashScripts/nativeExecutableMaker.sh $PROJECT_PATH $MAIN_FILE $EXECUTABLE_NAME
+      PROJECT_PATH=~/parts/hub/build/apps/hub
+      MAIN_FILE=bin/cbj_hub.dart
+      EXECUTABLE_NAME=CyBear-Jinni_Hub
+      cd ~/project
+      scripts/bashScripts/nativeExecutableMaker.sh "$PROJECT_PATH" "$MAIN_FILE" "$EXECUTABLE_NAME"
       mv "$EXECUTABLE_NAME" "$SNAPCRAFT_PART_INSTALL/"
       snapcraftctl build
+      
+      
 
     build-packages:
       - wget
