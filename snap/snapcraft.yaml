@@ -105,12 +105,11 @@ parts:
       - usb-modeswitch-data
       - wireless-regdb
       - wpasupplicant
-      - libatm1
-
       - network-manager-pptp
       - network-manager
 
       - wireless-tools
+    #      - libatm1
 
   hub-js:
     after: [include-snaps, hub]
@@ -162,7 +161,7 @@ parts:
       PROJECT_PATH="$HOME/parts/hub/build/apps/hub"
       MAIN_FILE="bin/cbj_hub.dart"
       EXECUTABLE_NAME="CyBear-Jinni_Hub"
-      cd $HOME/project/
+      #      cd $HOME/project/
       scripts/bashScripts/nativeExecutableMaker.sh $PROJECT_PATH $MAIN_FILE $EXECUTABLE_NAME
       mv "$EXECUTABLE_NAME" "$SNAPCRAFT_PART_INSTALL/"
       snapcraftctl build
