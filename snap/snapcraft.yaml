@@ -59,11 +59,11 @@ parts:
       - hub
     override-build: |
       echo "Security Bear build"
-      PROJECT_PATH="$HOME/parts/hub/build/apps/security_bear"
+      PROJECT_PATH="$SNAPCRAFT_PART_BUILD/apps/security_bear"
       MAIN_FILE="bin/main.dart"
       EXECUTABLE_NAME="Security-Bear"
 
-      cd $HOME/project/
+      cd $PROJECT_PATH
       scripts/bashScripts/nativeExecutableMaker.sh "$PROJECT_PATH" "$MAIN_FILE" "$EXECUTABLE_NAME"
       mv "$EXECUTABLE_NAME" "$SNAPCRAFT_PART_INSTALL/"
       snapcraftctl build
@@ -117,7 +117,7 @@ parts:
     source: .
     override-build: |
       set -x
-      PROJECT_PATH="$HOME/parts/hub/build/apps/hub_javascript"
+      PROJECT_PATH="$SNAPCRAFT_PART_BUILD/apps/hub_javascript"
       MAIN_FILE="src/app.ts"
       EXECUTABLE_NAME="hub-js"
       cd $SNAPCRAFT_PART_INSTALL
@@ -145,23 +145,23 @@ parts:
     plugin: dump
     override-build: |
 
-      rm -rf "$HOME/parts/hub/build/tools/CBJ_App_Snap"
-      rm -rf "$HOME/parts/hub/build/tools/CBJ_Smart-Device-Snap"
-      rm -rf "$HOME/parts/hub/build/tools/cbj-kubernetes-files"
-      rm -rf "$HOME/parts/hub/build/apps/smart_device"
-      rm -rf "$HOME/parts/hub/build/apps/site"
-      rm -rf "$HOME/parts/hub/build/apps/remote_pipes_routing"
-      rm -rf "$HOME/parts/hub/build/apps/remote-pipes"
-      rm -rf "$HOME/parts/hub/build/node_modules"
-      rm -rf "$HOME/parts/hub/build/.idea"
-      rm -rf "$HOME/parts/hub/build/package.json"
-      rm -rf "$HOME/parts/hub/build/package-lock.json"
-      rm -rf "$HOME/parts/hub/build/README.md"
+      rm -rf "$SNAPCRAFT_PART_BUILD/tools/CBJ_App_Snap"
+      rm -rf "$SNAPCRAFT_PART_BUILD/tools/CBJ_Smart-Device-Snap"
+      rm -rf "$SNAPCRAFT_PART_BUILD/tools/cbj-kubernetes-files"
+      rm -rf "$SNAPCRAFT_PART_BUILD/apps/smart_device"
+      rm -rf "$SNAPCRAFT_PART_BUILD/apps/site"
+      rm -rf "$SNAPCRAFT_PART_BUILD/apps/remote_pipes_routing"
+      rm -rf "$SNAPCRAFT_PART_BUILD/apps/remote-pipes"
+      rm -rf "$SNAPCRAFT_PART_BUILD/node_modules"
+      rm -rf "$SNAPCRAFT_PART_BUILD/.idea"
+      rm -rf "$SNAPCRAFT_PART_BUILD/package.json"
+      rm -rf "$SNAPCRAFT_PART_BUILD/package-lock.json"
+      rm -rf "$SNAPCRAFT_PART_BUILD/README.md"
 
-      PROJECT_PATH="$HOME/parts/hub/build/apps/hub"
+      PROJECT_PATH="$SNAPCRAFT_PART_BUILD/apps/hub"
       MAIN_FILE="bin/cbj_hub.dart"
       EXECUTABLE_NAME="CyBear-Jinni_Hub"
-      #      cd $HOME/project/
+      cd "$PROJECT_PATH"
       scripts/bashScripts/nativeExecutableMaker.sh $PROJECT_PATH $MAIN_FILE $EXECUTABLE_NAME
       mv "$EXECUTABLE_NAME" "$SNAPCRAFT_PART_INSTALL/"
       snapcraftctl build
